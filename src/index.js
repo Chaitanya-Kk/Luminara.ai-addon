@@ -1,4 +1,4 @@
-    const apiKey = "AIzaSyDiSEqYwpjoyvSUT9Po4QkPTrx29lbtEoc"; // For testing only
+    const apiKey = "Your_API_KEY_here"; // For testing only
 
     async function fetchGemini(prompt) {
       const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
