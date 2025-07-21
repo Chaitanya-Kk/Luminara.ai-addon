@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luminara.ai </title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="chat-container" class="flex flex-col gap-4">
+    <h1 class="text-2xl font-bold text-gray-800 text-center">Luminara.ai </h1>
+    <h2 class="text-2xl font-bold text-gray-500 text-center">A Gemini based Design Assistant</h2>
+    <div id="image-placeholder" class="text-gray-700">
+      <p><strong>Design Link / Preview:</strong> <span id="design-link">No design yet.</span></p>
+    </div>
+
+    <input type="text" id="message-input" placeholder="Describe your design (e.g., birthday card)" class="w-full">
+    <div class="flex gap-3 flex-wrap justify-center">
+      <button onclick="sendMessage()" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">Send</button>
+      <button onclick="getDesignLink()" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Get Design Link</button>
+      <button onclick="getCanvasInstructions()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Get Canvas Instructions</button>
+    </div>
+
+    <div id="chat-history" role="region" aria-label="Chat history" class="text-gray-800"></div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

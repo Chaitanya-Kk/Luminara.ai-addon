@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box; /* Ensure padding and borders don't break layout */
+}
+
+body {
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  background: #ffffff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFElEQVQIW2P8/////z8YGBiYGRkZAwA0WAkCFu4CngAAAABJRU5ErkJggg==') repeat; /* Subtle starfield texture */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Distribute content, pushing bottom to page end */
+  align-items: center;
+  margin: 0;
+  color: #000000;
+}
+
+#chat-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 153, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2); /* Blue glow effect */
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  margin: 1rem;
+  border: 1px solid rgba(0, 153, 255, 0.4); /* Subtle blue border */
+  backdrop-filter: blur(5px); /* Frosted glass effect */
+  flex-grow: 1; /* Allow container to grow and fill space */
+  display: flex;
+  flex-direction: column; /* Ensure internal content stacks properly */
+  overflow-wrap: break-word; /* Ensure text wraps */
+  white-space: normal; /* Allow natural wrapping */
+  word-break: break-word; /* Break long words */
+}
+
+#image-placeholder {
+  background: rgba(240, 240, 240, 0.9);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0, 153, 255, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+#image-placeholder:hover {
+  box-shadow: 0 0 10px rgba(0, 153, 255, 0.5); /* Glow on hover */
+}
+
+#message-input {
+  border: 1px solid rgba(0, 153, 255, 0.4);
+  border-radius: 6px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow-wrap: break-word; /* Ensure text wraps */
+  white-space: normal; /* Allow natural wrapping */
+  word-break: break-word; /* Break long words */
+  resize: vertical; /* Allow vertical resizing for better text input */
+}
+
+#message-input:focus {
+  outline: none;
+  border-color: #00ccff;
+  box-shadow: 0 0 8px rgba(0, 204, 255, 0.6); /* Bright blue glow */
+}
+
+#chat-history {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(240, 240, 240, 0.8);
+  border-radius: 6px;
+  border: 1px solid rgba(0, 153, 255, 0.3);
+  color: #000000;
+  overflow-wrap: break-word; /* Ensure text wraps */
+  white-space: normal; /* Allow natural wrapping */
+  word-break: break-word; /* Break long words */
+  flex-grow: 1; /* Allow chat history to expand within container */
+}
+
+button {
+  background: #ffffff;
+  border: 1px solid #00ccff;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  color: #00ccff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #00ccff;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(0, 204, 255, 0.7); /* Holographic glow */
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 0 8px rgba(0, 204, 255, 0.5);
+}
+
+a {
+  color: #00ccff; /* Star Wars blue */
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+  overflow-wrap: break-word; /* Ensure link text wraps */
+  white-space: normal; /* Allow natural wrapping */
+  word-break: break-word; /* Break long URLs or text */
+  display: inline-block; /* Ensure links respect wrapping */
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 204, 255, 0.8); /* Glowing effect */
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: #00ccff;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%; /* Underline grows on hover */
+}
+
+/* Specific class for a link container, if needed */
+.link-container {
+  overflow-wrap: break-word; /* Ensure text wraps */
+  white-space: normal; /* Allow natural wrapping */
+  word-break: break-word; /* Break long words */
+  padding: 0.5rem;
+  max-width: 100%; /* Prevent overflow */
+}
+
+/* Scrollbar styling */
+#chat-history::-webkit-scrollbar {
+  width: 6px;
+}
+
+#chat-history::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+#chat-history::-webkit-scrollbar-thumb {
+  background: #00ccff;
+  border-radius: 3px;
+  box-shadow: 0 0 6px rgba(0, 204, 255, 0.5);
+}
+
+/* Ensure footer or bottom content sticks to the bottom */
+.bottom-container {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid rgba(0, 153, 255, 0.4);
+  text-align: center;
+  margin-top: auto; /* Push to bottom of flex container */
+}

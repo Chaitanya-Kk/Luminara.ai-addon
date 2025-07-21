@@ -1,0 +1,30 @@
+{
+    "testId": "c54591f1-134b-4979-9da8-6f869feb3d8a",
+    "name": "Luminara",
+    "version": "1.0.0",
+    "manifestVersion": 2,
+    "requirements": {
+        "apps": [
+            {
+                "name": "Express",
+                "apiVersion": 1
+            }
+        ]
+    },
+    "entryPoints": [
+        {
+            "type": "panel",
+            "id": "designChatPanel",
+            "main": "index.html"
+        }
+    ],
+    "permissions": [
+        "network",
+        {
+            "urls": [
+                "https://accounts.google.com/*",
+                "https://*.googleapis.com/*"
+            ]
+        }
+    ]
+}
